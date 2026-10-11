@@ -12,7 +12,7 @@ PKGCONF		?=	pkg-config
 # File
 HEADERS		=	$(shell find include -type f -name '*.h')
 SRCS		=	$(shell find src -type f -name '*.c')
-OBJS		=	$(addprefix $(BUILD)/, $(SRCS:.c=.o))
+OBJS		=	$(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 
 
 # Path
