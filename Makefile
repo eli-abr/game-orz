@@ -11,9 +11,10 @@ PKGCONF		?=	pkg-config
 
 # File
 HEADERS		=	$(shell find include -type f -name '*.h')
-SRCS		=	$(shell find src -type f -name '*.c')
+SRCS		=	$(shell find orz -type f -name '*.c')
 OBJS		=	$(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 
+SRCS		+=	$(shell find eae -type f -name '*.c')
 
 # Path
 BUILD_DIR	?=	$(abspath build)

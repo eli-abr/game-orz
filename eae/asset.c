@@ -1,11 +1,11 @@
-#include <orz/asset.h>
+#include <eae/asset.h>
 #include <raylib.h>
 #include <limits.h>
 #include <string.h>
 #include <cwalk.h>
 
 static char prv_asset_path[PATH_MAX];
-void Orz_SetAssetPath(const char *path)
+void eaeSetAssetPath(const char *path)
 {
     if (path == nullptr) {
         strlcpy(prv_asset_path, GetApplicationDirectory(), PATH_MAX);
@@ -14,13 +14,13 @@ void Orz_SetAssetPath(const char *path)
     } else {
         cwk_path_get_absolute(GetApplicationDirectory(), path, prv_asset_path, PATH_MAX);
     }
-    ORZ_LOG(stdout, "asset path: %s", prv_asset_path);
+    EAE_LOG(stdout, "asset path: %s", prv_asset_path);
 }
-const char *Orz_GetAssetPath()
+const char *eaeGetAssetPath()
 {
     return prv_asset_path;
 }
-size_t Orz_AssetUrl(char *str, size_t maxlen, const char *path)
+size_t eaeAssetUrl(char *str, size_t maxlen, const char *path)
 {
     return cwk_path_get_absolute(prv_asset_path, path, str, maxlen);
 }
