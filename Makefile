@@ -23,7 +23,10 @@ prefix		?=	/usr/local
 CPPFLAGS	=	-I./include
 CFLAGS		=	-std=gnu23 -Wall -Wextra -g -O2 -fvisibility=hidden
 LDFLAGS		=	
-LDLIBS		=	$(shell $(PKGCONF) --libs raylib)
+LDLIBS		=	
+
+LDLIBS		+=	$(shell $(PKGCONF) --libs raylib)
+LDLIBS		+=	$(shell $(PKGCONF) --libs cwalk)
 
 all: $(BUILD_DIR) $(BUILD_DIR)/$(EXEC)
 $(BUILD_DIR):
