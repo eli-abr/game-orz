@@ -3,6 +3,7 @@
 #include <raylib.h>
 #include <raymath.h>
 
+
 static void prvReady(OrzCharater *self)
 {
     self->crt_impl.direct = (Vector2){};
