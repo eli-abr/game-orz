@@ -25,8 +25,8 @@ void eaeNodeListInsert(EaeNodeList *self, EaeNodeImpl *node_impl)
 }
 void eaeNodeListRemove(EaeNodeList *self, EaeNodeImpl *node_impl)
 {
-    int i;
-    for (i = 0; i < self->count; ++i) {
+    size_t i;
+    for (i = 0U; i < self->count; ++i) {
         if (self->arr[i] == node_impl) break;
     }
     if (i == self->count) return;
